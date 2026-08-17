@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Creativista Charm — Creative Kid Events, Programs and Enrichment</title>
+<meta name="description" content="Creativista Charm LLC: creative youth programming, staffed and run for recreation departments, school districts, and foundations in Connecticut and South Florida.">
+<link rel="icon" href="assets/images/opt/logo-900.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Barlow+Condensed:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   FOUR-COLOR PULL — Creativista Charm
+   A screenprinted community poster. Every ink is flat, every
+   overlap is an overprint, and the border carries the billing.
+   ============================================================ */
+
+:root{
+  --sheet:      #F7F7F3;
+  --sheet-2:    #EDEDE6;
+  --ink:        #141110;
+
+  /* the four screens, pulled in this order */
+  --vermilion:  #E5322A;
+  --jade:       #00857A;
+  --cadmium:    #FFC400;
+  --magenta:    #E5007E;
+  --magenta-dk: #B4005F;
+
+  --rhythm: clamp(4rem, 8vw, 7rem);
+  --measure: 66ch;
+  --frame: clamp(14px, 2.4vw, 30px);
+
+  /* press sheet fiber */
+  --fiber: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23f)' opacity='0.42'/%3E%3C/svg%3E");
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; scroll-padding-top:80px; }
+@media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+
+body{
+  margin:0;
+  background:var(--sheet);
+  color:var(--ink);
+  font-family:'Barlow', system-ui, sans-serif;
+  font-size:clamp(1rem, .96rem + .22vw, 1.1rem);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+/* uncoated stock */
+body::after{
+  content:""; position:fixed; inset:0; z-index:80; pointer-events:none;
+  background-image:var(--fiber); background-size:180px 180px;
+  opacity:.35; mix-blend-mode:multiply;
+}
+
+::selection{ background:var(--cadmium); color:var(--ink); }
+:root{ caret-color:var(--vermilion); accent-color:var(--vermilion); }
+html{ scrollbar-color:var(--vermilion) var(--sheet-2); scrollbar-width:thin; }
+::-webkit-scrollbar{ width:12px; height:12px; }
+::-webkit-scrollbar-track{ background:var(--sheet-2); }
+::-webkit-scrollbar-thumb{ background:var(--vermilion); border:3px solid var(--sheet-2); }
+
+:where(a,button,summary,[tabindex]):focus-visible{
+  outline:3px solid var(--jade); outline-offset:3px;
+}
+a{ color:inherit; text-underline-offset:.2em; text-decoration-thickness:2px; }
+img{ max-width:100%; display:block; }
+
+h1,h2,h3,.drawn{
+  font-family:'Bungee', 'Barlow Condensed', sans-serif;
+  font-weight:400; text-transform:uppercase;
+  letter-spacing:-.005em; line-height:.95;
+  margin:0; text-wrap:balance;
+}
+h2{ font-size:clamp(1.7rem, 1rem + 3vw, 3.5rem); }
+h3{ font-size:clamp(1rem, .92rem + .5vw, 1.28rem); }
+
+p{ margin:0 0 1em; max-width:var(--measure); }
+ul,ol{ margin:0; padding:0; list-style:none; }
+
+.wrap{ width:min(1200px, 92vw); margin-inline:auto; }
+.band{ padding-block:var(--rhythm); position:relative; }
+.lede{ font-size:clamp(1.04rem, 1rem + .45vw, 1.26rem); line-height:1.45; max-width:50ch; }
+.tnum{ font-variant-numeric:tabular-nums; }
+.band > .wrap > h2{ margin-bottom:.42em; }
+.band > .wrap > h2 + .lede{ margin-bottom:2.3rem; }
+
+/* ============================================================
+   THE SHEET EDGE — a ruled border packed with the billing
+   ============================================================ */
+.sheet{
+  border:var(--frame) solid var(--ink);
+  border-top-width:0;
+  position:relative;
+}
+/* The billing block: everything the poster is billing, packed into the
+   sheet's top rule. Static, because the roster is the proof. */
+.billing{
+  background:var(--ink); color:var(--sheet);
+  font-family:'Barlow Condensed', sans-serif; font-weight:600;
+  font-size:.7rem; letter-spacing:.19em; text-transform:uppercase;
+  padding:.75rem 0;
+  line-height:1.9;
+}
+.billing__track{
+  display:flex; flex-wrap:wrap;
+  column-gap:1.5rem; row-gap:.1rem;
+  align-items:baseline;
+}
+.billing__track > span{ display:flex; align-items:center; gap:1.5rem; }
+.billing__track > span::after{
+  content:""; width:4px; height:4px; background:var(--vermilion); flex:0 0 auto;
+}
+.billing__track > span:last-child::after{ display:none; }
+.billing__track b{ font-weight:700; color:var(--cadmium); }
+
+/* ============================================================
+   HEADER — nav cells in the poster's own border grammar
+   ============================================================ */
+.top{
+  position:sticky; top:0; z-index:60;
+  background:var(--sheet);
+  border-bottom:3px solid var(--ink);
+}
+.top__in{ display:flex; align-items:stretch; gap:0; }
+.top__brand{
+  display:flex; align-items:center; gap:.65rem;
+  padding:.55rem 1rem .55rem 0; text-decoration:none; flex:0 0 auto;
+}
+.top__brand img{ width:42px; height:42px; border-radius:50%; }
+.top__brand span{
+  font-family:'Bungee',sans-serif; font-size:.78rem; line-height:1.05;
+  max-width:10ch; text-transform:uppercase;
+}
+.cells{ margin-left:auto; display:flex; }
+.cells a{
+  display:flex; align-items:center; padding:0 1.05rem;
+  font-family:'Barlow Condensed',sans-serif; font-weight:700;
+  font-size:.86rem; letter-spacing:.16em; text-transform:uppercase;
+  text-decoration:none;
+  border-left:2px solid var(--ink);
+  transition:background .18s, color .18s;
+}
+.cells a:hover{ background:var(--cadmium); }
+.cells a[aria-current="true"]{ background:var(--vermilion); color:var(--sheet); }
+@media (max-width:900px){ .cells{ display:none; } }
+
+/* ============================================================
+   HERO — the burst, radiating from one off-center origin
+   ============================================================ */
+.poster{
+  position:relative; overflow:hidden;
+  background:var(--cadmium);
+  padding-block:clamp(3rem,6vw,5.5rem) clamp(3.5rem,7vw,6.5rem);
+  isolation:isolate;
+}
+.rays{
+  position:absolute; inset:-30% -10%;
+  z-index:-2;
+  mix-blend-mode:multiply;
+  transform-origin:22% 30%;
+}
+@media (prefers-reduced-motion: no-preference){
+  .js .rays{ animation:sweep 44s linear infinite; }
+  @keyframes sweep{ from{ transform:rotate(0deg); } to{ transform:rotate(360deg); } }
+}
+.poster__grid{
+  display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+  gap:clamp(1.8rem,4vw,3.6rem); align-items:center;
+}
+@media (max-width:920px){ .poster__grid{ grid-template-columns:1fr; } }
+
+/* The lettering is knocked out onto its own sheet so it never fights the
+   burst behind it. Bungee's caps need room; .9 line-height collides. */
+.poster__plate{
+  background:var(--sheet);
+  border:5px solid var(--ink);
+  padding:clamp(1.3rem, 2.6vw, 2.2rem);
+  box-shadow:12px 12px 0 var(--magenta);
+}
+.poster h1{
+  font-size:clamp(1.85rem, .8rem + 3.3vw, 3.3rem);
+  line-height:1.04; margin-bottom:.42em;
+  color:var(--ink);
+}
+.poster h1 span{ display:block; color:var(--vermilion); }
+.poster h1 span.jade{ color:var(--jade); }
+.poster__lede{ max-width:42ch; font-weight:500; }
+.poster__acts{ display:flex; gap:.8rem; flex-wrap:wrap; margin-top:1.9rem; }
+
+/* collaged, halftoned heads pasted into the rays */
+.collage{ position:relative; }
+.collage__plate{
+  position:relative; overflow:hidden;
+  border:5px solid var(--ink);
+  box-shadow:10px 10px 0 var(--jade);
+}
+.collage__plate img{ width:100%; filter:grayscale(1) contrast(1.35) brightness(1.06); }
+/* a real dot screen, not a texture image */
+.collage__plate::after{
+  content:""; position:absolute; inset:0;
+  background-image:radial-gradient(circle at 1px 1px, var(--vermilion) 1.35px, transparent 1.6px);
+  background-size:5px 5px;
+  mix-blend-mode:multiply; opacity:.85;
+}
+.collage__stamp{
+  position:absolute; right:-10px; bottom:-18px;
+  background:var(--magenta); color:#fff;
+  font-family:'Bungee',sans-serif; font-size:.74rem; letter-spacing:.04em;
+  padding:.7rem 1rem; text-transform:uppercase;
+  border:3px solid var(--ink);
+  transform:rotate(-4deg);
+}
+
+.btn{
+  display:inline-flex; align-items:center;
+  font-family:'Bungee',sans-serif; font-size:.84rem; letter-spacing:.02em;
+  text-transform:uppercase; text-decoration:none;
+  padding:.92rem 1.4rem;
+  background:var(--vermilion); color:#fff;
+  border:3px solid var(--ink);
+  transition:transform .22s cubic-bezier(.16,1,.3,1), background .22s;
+}
+.btn:hover{ background:var(--magenta); transform:translate(-2px,-2px); }
+.btn:active{ transform:translate(0,0); }
+.btn--flat{ background:var(--sheet); color:var(--ink); }
+.btn--flat:hover{ background:#fff; }
+.btn--ink{ background:var(--ink); color:var(--sheet); }
+.btn--ink:hover{ background:var(--jade); }
+
+/* ============================================================
+   REGION LINE
+   ============================================================ */
+.regions{ background:var(--ink); color:#fff; }
+/* the seam between the two lines is the ink of the sheet showing through */
+.regions__grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:3px; }
+@media (max-width:720px){ .regions__grid{ grid-template-columns:1fr; } }
+.regions__cell{ background:var(--jade); padding:1.4rem 1.3rem; display:flex; gap:1rem; align-items:baseline; flex-wrap:wrap; }
+.regions__cell h3{ font-size:.82rem; letter-spacing:.14em; color:var(--cadmium); }
+.regions__cell a{ font-size:1.24rem; font-weight:700; text-decoration:none; }
+.regions__cell a:hover{ text-decoration:underline; }
+.regions__cell small{ margin-left:auto; opacity:.85; font-size:.8rem; }
+
+/* ============================================================
+   THE BILL — programs as poster billing blocks
+   ============================================================ */
+.bill{ background:var(--sheet); }
+.bill__list{ border-top:4px solid var(--ink); }
+.bill__row{
+  display:grid; grid-template-columns:auto 1fr auto;
+  gap:1.4rem; align-items:center;
+  padding:1.5rem 0; border-bottom:2px solid var(--ink);
+  position:relative;
+}
+@media (max-width:820px){
+  .bill__row{ grid-template-columns:1fr; gap:.7rem; }
+}
+.bill__mark{
+  width:54px; height:54px; flex:0 0 auto;
+  display:grid; place-items:center;
+  font-family:'Bungee',sans-serif; font-size:1.2rem; color:#fff;
+  border:3px solid var(--ink);
+}
+.bill__row:nth-child(1) .bill__mark{ background:var(--vermilion); }
+.bill__row:nth-child(2) .bill__mark{ background:var(--jade); }
+.bill__row:nth-child(3) .bill__mark{ background:var(--magenta); }
+.bill__row:nth-child(4) .bill__mark{ background:var(--ink); }
+.bill__body h3{ margin-bottom:.3rem; }
+.bill__body p{ margin:0; color:#3B3634; font-size:.98rem; max-width:46ch; }
+.bill__meta{
+  font-family:'Barlow Condensed',sans-serif; font-weight:700;
+  font-size:.74rem; letter-spacing:.16em; text-transform:uppercase;
+  display:flex; gap:1rem; align-items:center;
+}
+
+/* ============================================================
+   ROSTER — the packed billing block, at full size
+   ============================================================ */
+.roster{ background:var(--ink); color:var(--sheet); }
+.roster h2{ color:var(--cadmium); }
+.roster__grid{
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+  gap:0;
+  border-top:2px solid rgba(247,247,243,.35);
+  border-left:2px solid rgba(247,247,243,.35);
+}
+.roster__cell{
+  padding:.95rem 1rem;
+  border-right:2px solid rgba(247,247,243,.35);
+  border-bottom:2px solid rgba(247,247,243,.35);
+  font-family:'Barlow Condensed',sans-serif; font-weight:600;
+  font-size:.94rem; letter-spacing:.05em; text-transform:uppercase;
+  line-height:1.25;
+  display:flex; flex-direction:column; gap:.35rem;
+  transition:background .2s, color .2s;
+}
+.roster__cell:hover{ background:var(--vermilion); color:#fff; }
+.roster__cell i{
+  font-style:normal; font-size:.66rem; letter-spacing:.2em; color:var(--cadmium);
+}
+.roster__cell:hover i{ color:#fff; }
+
+/* ============================================================
+   PRESS LINE
+   ============================================================ */
+.press{ background:var(--magenta); color:#fff; }
+.press h2{ color:#fff; }
+.press__line{
+  display:flex; flex-wrap:wrap; gap:.5rem 1.6rem;
+  padding:1.2rem 0;
+  border-top:4px solid var(--ink); border-bottom:4px solid var(--ink);
+  font-family:'Barlow Condensed',sans-serif; font-weight:700;
+  font-size:clamp(.92rem,.85rem + .5vw,1.2rem);
+  letter-spacing:.1em; text-transform:uppercase;
+}
+.press__line li{ display:flex; align-items:center; gap:1.6rem; }
+.press__line li::after{ content:""; width:7px; height:7px; background:var(--cadmium); }
+.press__line li:last-child::after{ display:none; }
+
+/* ============================================================
+   CONSULTING
+   ============================================================ */
+.consult{ background:var(--sheet-2); }
+.consult .wrap{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(2rem,5vw,4rem); align-items:center; }
+@media (max-width:880px){ .consult .wrap{ grid-template-columns:1fr; } }
+.consult__plate{ border:5px solid var(--ink); box-shadow:12px 12px 0 var(--cadmium); position:relative; overflow:hidden; }
+.consult__plate img{ width:100%; filter:grayscale(1) contrast(1.3); }
+.consult__plate::after{
+  content:""; position:absolute; inset:0;
+  background-image:radial-gradient(circle at 1px 1px, var(--jade) 1.35px, transparent 1.6px);
+  background-size:5px 5px; mix-blend-mode:multiply; opacity:.9;
+}
+.consult ul{ margin:1.4rem 0 2rem; }
+.consult li{
+  padding:.7rem 0; border-top:2px solid var(--ink);
+  display:flex; gap:.9rem; align-items:baseline;
+  font-weight:500;
+}
+.consult li::before{ content:""; width:12px; height:12px; flex:0 0 auto; background:var(--vermilion); }
+
+/* ============================================================
+   WORD PANEL
+   ============================================================ */
+.word{ background:var(--vermilion); color:#fff; }
+.word .wrap{ display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); gap:clamp(2rem,5vw,4rem); align-items:center; }
+@media (max-width:880px){ .word .wrap{ grid-template-columns:1fr; } }
+.word__big{
+  font-family:'Bungee',sans-serif; text-transform:uppercase;
+  font-size:clamp(1.9rem,.9rem + 3.4vw,3.5rem); line-height:1.02;
+  color:var(--cadmium); margin:0 0 .3em;
+}
+.word p{ color:rgba(255,255,255,.96); }
+.word__cut{ border:5px solid var(--ink); background:#fff; padding:1rem; }
+
+/* ============================================================
+   FOUNDER
+   ============================================================ */
+.founder{ background:var(--sheet); }
+.founder .wrap{ display:grid; grid-template-columns:minmax(0,300px) minmax(0,1fr); gap:clamp(2rem,5vw,3.5rem); align-items:center; }
+@media (max-width:760px){ .founder .wrap{ grid-template-columns:1fr; } }
+.founder__plate{ border:5px solid var(--ink); box-shadow:10px 10px 0 var(--magenta); overflow:hidden; position:relative; }
+.founder__plate img{ width:100%; aspect-ratio:1; object-fit:cover; object-position:50% 26%; filter:grayscale(1) contrast(1.25); }
+.founder__plate::after{
+  content:""; position:absolute; inset:0;
+  background-image:radial-gradient(circle at 1px 1px, var(--magenta) 1.3px, transparent 1.6px);
+  background-size:5px 5px; mix-blend-mode:multiply; opacity:.8;
+}
+
+/* ============================================================
+   WANTED — the classified corner of the poster
+   ============================================================ */
+.wanted{ background:var(--cadmium); }
+.wanted__box{ border:5px solid var(--ink); background:var(--sheet); }
+.wanted__head{
+  background:var(--ink); color:var(--sheet);
+  font-family:'Bungee',sans-serif; font-size:.86rem; letter-spacing:.06em;
+  text-transform:uppercase; padding:.75rem 1.2rem;
+  display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+}
+.wanted__row{
+  display:flex; gap:1rem; align-items:baseline; flex-wrap:wrap;
+  padding:1.05rem 1.2rem; border-top:2px solid var(--ink);
+}
+.wanted__box .wanted__row:first-of-type{ border-top:0; }
+.wanted__row strong{ font-family:'Bungee',sans-serif; font-size:.98rem; text-transform:uppercase; font-weight:400; }
+.wanted__row span{ color:#4A4340; }
+.wanted__row em{
+  margin-left:auto; font-style:normal;
+  background:var(--vermilion); color:#fff;
+  font-family:'Barlow Condensed',sans-serif; font-weight:700;
+  font-size:.7rem; letter-spacing:.18em; text-transform:uppercase;
+  padding:.22rem .6rem;
+}
+
+/* ============================================================
+   COLOPHON
+   ============================================================ */
+.colophon{ background:var(--ink); color:var(--sheet); padding-block:var(--rhythm) 2.4rem; }
+.colophon__grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(205px,1fr)); gap:2.4rem; }
+.colophon h3{ font-size:.74rem; letter-spacing:.2em; color:var(--cadmium); margin-bottom:.8rem; }
+.colophon address{ font-style:normal; line-height:1.8; }
+.colophon a{ text-decoration:none; }
+.colophon a:hover{ text-decoration:underline; }
+.colophon__legal{
+  margin-top:3rem; padding-top:1.3rem; border-top:2px solid rgba(247,247,243,.3);
+  display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+  font-family:'Barlow Condensed',sans-serif; font-weight:600;
+  font-size:.8rem; letter-spacing:.14em; text-transform:uppercase;
+  color:rgba(247,247,243,.75);
+}
+
+.skip{ position:absolute; left:-9999px; background:var(--cadmium); color:var(--ink); padding:.8rem 1.2rem; z-index:99; font-weight:700; }
+.skip:focus{ left:1rem; top:1rem; }
+</style>
+</head>
+<body>
+<!--
+THESIS: A community poster, pulled in four flat inks, where the sheet's border
+carries the billing. Nineteen agencies are the headline act, not a logo wall.
+OWN-WORLD: Uncoated sheet under vermilion, jade, cadmium and magenta screens,
+overprinted with multiply. Bungee drawn signage lettering, Barlow Condensed
+agate. Photographs are halftoned to a visible dot; every block is ruled in ink.
+STORY: A rec director reads the bill, sees peer towns in the roster, and calls
+the number for their own region.
+FIRST VIEWPORT: A cadmium field with an off-center ray burst turning behind
+drawn three-line lettering; right, a halftoned student plate with a jade
+offset. The billing crawl runs the border above it.
+FORM: Silkscreened community poster, fused from the dealt angura challenger;
+the one challenger that held product clarity; seed 1de2145a.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+-->
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="top__brand" href="#top">
+      <img src="assets/images/opt/logo-900.webp" alt="" width="42" height="42">
+      <span>Creativista Charm</span>
+    </a>
+    <nav class="cells" aria-label="Primary">
+      <a href="#bill">Programs</a>
+      <a href="#roster">Partners</a>
+      <a href="#consulting">Consulting</a>
+      <a href="#wanted">Jobs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Abbreviated billing. The full roster is set in #roster with list semantics,
+     so this repeat is hidden from assistive tech rather than announced twice. -->
+<div class="billing" aria-hidden="true">
+  <div class="wrap billing__track">
+    <span><b>19 agencies booked</b></span><span>City of Hartford Recreation</span><span>West Hartford Leisure Services</span><span>Simsbury Recreation</span><span>Westport Recreation</span><span>Capitol Region Education Council</span><span>Bloomfield Public Schools</span><span>Hartford Yard Goats Foundation</span><span>Blue Hills Civic Association</span><span>David Posnack JCC</span><span><b>CT 860.458.4373</b></span><span><b>FL 954.833.6672</b></span>
+  </div>
+</div>
+
+<div class="sheet">
+<main id="main">
+
+<!-- ===================== POSTER ===================== -->
+<section class="poster" id="top">
+  <svg class="rays" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <g fill="#E5322A" opacity=".9">
+      <path d="M22 30 L120 -40 L120 -14 Z"/>
+      <path d="M22 30 L128 6 L128 30 Z"/>
+      <path d="M22 30 L124 52 L120 76 Z"/>
+      <path d="M22 30 L104 100 L84 118 Z"/>
+      <path d="M22 30 L52 122 L28 126 Z"/>
+      <path d="M22 30 L-4 124 L-26 110 Z"/>
+      <path d="M22 30 L-60 78 L-70 58 Z"/>
+      <path d="M22 30 L-70 20 L-66 -2 Z"/>
+      <path d="M22 30 L-40 -46 L-22 -60 Z"/>
+      <path d="M22 30 L34 -70 L58 -64 Z"/>
+    </g>
+  </svg>
+
+  <div class="wrap poster__grid">
+    <div class="poster__plate">
+      <h1>Creative<span>programming,</span><span class="jade">fully staffed.</span></h1>
+      <p class="lede poster__lede">Creativista Charm designs, staffs, and runs youth enrichment for recreation departments, school districts, and foundations across Connecticut and South Florida.</p>
+      <div class="poster__acts">
+        <a class="btn" href="mailto:info@CreativistaCharm.com?subject=Programming%20inquiry">Book a program</a>
+        <a class="btn btn--ink" href="#bill">Programs for families</a>
+      </div>
+    </div>
+
+    <div class="collage">
+      <div class="collage__plate">
+        <img src="assets/images/opt/students-1800.webp" alt="Five elementary and middle school students standing together in a bright classroom." width="900" height="600">
+      </div>
+      <span class="collage__stamp">Grades PK&ndash;8</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REGIONS ===================== -->
+<section class="regions" aria-label="Regional lines">
+  <div class="wrap">
+    <div class="regions__grid">
+      <div class="regions__cell">
+        <h3 class="drawn">Connecticut</h3>
+        <a class="tnum" href="tel:+18604584373">860.458.4373</a>
+        <small>Greater Hartford</small>
+      </div>
+      <div class="regions__cell">
+        <h3 class="drawn">South Florida</h3>
+        <a class="tnum" href="tel:+19548336672">954.833.6672</a>
+        <small>Broward &amp; Miami-Dade</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== THE BILL ===================== -->
+<section class="bill band" id="bill">
+  <div class="wrap">
+    <h2>On the bill</h2>
+    <p class="lede">Four programs. Agencies book a full session; families enroll directly.</p>
+
+    <div class="bill__list">
+      <article class="bill__row">
+        <span class="bill__mark" aria-hidden="true">A</span>
+        <div class="bill__body">
+          <h3>After School Programs</h3>
+          <p>Weekly creative enrichment delivered at your site with our instructors, curriculum, and materials.</p>
+        </div>
+        <p class="bill__meta"><a class="btn btn--ink" href="mailto:info@CreativistaCharm.com?subject=After%20School%20Programs">Inquire</a></p>
+      </article>
+
+      <article class="bill__row">
+        <span class="bill__mark" aria-hidden="true">B</span>
+        <div class="bill__body">
+          <h3>Student Learning Pods</h3>
+          <p>Small-group learning pods, run under our sister program.</p>
+        </div>
+        <p class="bill__meta"><a class="btn btn--ink" href="https://creativistapods.com" rel="noopener">Pods site</a></p>
+      </article>
+
+      <article class="bill__row">
+        <span class="bill__mark" aria-hidden="true">C</span>
+        <div class="bill__body">
+          <h3>Summer Camps &amp; Enrichment</h3>
+          <p>Camp weeks and enrichment blocks built around making things, for municipal camps, community centers, and private groups.</p>
+        </div>
+        <p class="bill__meta"><a class="btn btn--ink" href="mailto:info@CreativistaCharm.com?subject=Summer%20Camps">Inquire</a></p>
+      </article>
+
+      <article class="bill__row">
+        <span class="bill__mark" aria-hidden="true">D</span>
+        <div class="bill__body">
+          <h3>Tutoring, PK&ndash;8th</h3>
+          <p>One-on-one tutoring in Connecticut and South Florida, matched to the student rather than to a packaged curriculum.</p>
+        </div>
+        <p class="bill__meta"><a class="btn btn--ink" href="mailto:info@CreativistaCharm.com?subject=Tutoring">Inquire</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ROSTER ===================== -->
+<section class="roster band" id="roster">
+  <div class="wrap">
+    <h2>Nineteen agencies have hired us</h2>
+    <p class="lede" style="color:rgba(247,247,243,.88)">Cities, towns, districts, foundations, and community organizations, listed in full.</p>
+
+    <ul class="roster__grid">
+      <li class="roster__cell">City of Hartford Recreation Department <i>Connecticut</i></li>
+      <li class="roster__cell">City of Hartford Office of Community Engagement <i>Connecticut</i></li>
+      <li class="roster__cell">Town of West Hartford Leisure Services <i>Connecticut</i></li>
+      <li class="roster__cell">Town of Simsbury Recreation Department <i>Connecticut</i></li>
+      <li class="roster__cell">Town of Westport Recreation Department <i>Connecticut</i></li>
+      <li class="roster__cell">Capitol Region Education Council <i>Connecticut</i></li>
+      <li class="roster__cell">Bloomfield Public Schools <i>Connecticut</i></li>
+      <li class="roster__cell">Hartford Youth Advisory Board <i>Connecticut</i></li>
+      <li class="roster__cell">Hartford Yard Goats Foundation <i>Connecticut</i></li>
+      <li class="roster__cell">Mayor Bronin&rsquo;s Hartford Covid Recovery Group <i>Connecticut</i></li>
+      <li class="roster__cell">Hartford NEXT Inc. <i>Connecticut</i></li>
+      <li class="roster__cell">Blue Hills Civic Association <i>Connecticut</i></li>
+      <li class="roster__cell">West Indian Foundation Inc. <i>Connecticut</i></li>
+      <li class="roster__cell">Advocacy to Legacy Inc. <i>Connecticut</i></li>
+      <li class="roster__cell">DJ Londonn Scholarship Foundation <i>Connecticut</i></li>
+      <li class="roster__cell">Launch Trampoline Park <i>Connecticut</i></li>
+      <li class="roster__cell">Educators 4 You <i>South Florida</i></li>
+      <li class="roster__cell">iReading TUTOR <i>South Florida</i></li>
+      <li class="roster__cell">David Posnack Jewish Community Center <i>South Florida</i></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== PRESS ===================== -->
+<section class="press band" aria-label="Press coverage">
+  <div class="wrap">
+    <h2>As featured in</h2>
+    <ul class="press__line">
+      <li>Connecticut Public / WNPR</li>
+      <li>FOX61</li>
+      <li>Hartford Courant</li>
+      <li>NBC Connecticut</li>
+      <li>CT News Junkie</li>
+      <li>The Doctors</li>
+      <li>Journal Inquirer</li>
+      <li>Innovation Destination Hartford</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== CONSULTING ===================== -->
+<section class="consult band" id="consulting">
+  <div class="wrap">
+    <div class="consult__plate">
+      <img src="assets/images/opt/hands-1600.webp" alt="Children standing in a circle with their hands stacked together on the grass." width="800" height="320" loading="lazy">
+    </div>
+    <div>
+      <h2>Youth &amp; educational consulting</h2>
+      <p class="lede">When the programming exists on paper but not on the calendar, we build the thing that actually runs.</p>
+      <ul>
+        <li>Program design for recreation departments and school districts</li>
+        <li>Instructor recruiting, staffing, and on-site delivery</li>
+        <li>Summer and after-school session planning</li>
+        <li>Youth engagement strategy for foundations and civic groups</li>
+      </ul>
+      <a class="btn" href="mailto:info@CreativistaCharm.com?subject=Consulting%20inquiry">Let&rsquo;s work together</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== THE WORD ===================== -->
+<section class="word band">
+  <div class="wrap">
+    <div>
+      <p class="word__big">Creativista</p>
+      <p class="lede">A person who gives birth to creativity: an innovator, a designer, a promoter, a follower of the latest creative ideas.</p>
+      <p>The word is ours. It borrows the Spanish suffix <em>-ista</em>, the one that marks a person by what they do, the same way <em>fashionista</em> does. Yes, that is meant to make you smile. It is also exactly what we are hired to grow in a room full of eight-year-olds.</p>
+    </div>
+    <div class="word__cut">
+      <img src="assets/images/opt/logo-wide-1400.webp" alt="The Creativista Charm logo: four illustrated children inside a teal circle, with a pink balloon reading Charm." width="700" height="620" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOUNDER ===================== -->
+<section class="founder band">
+  <div class="wrap">
+    <div class="founder__plate">
+      <img src="assets/images/opt/tia-900.webp" alt="Tia S. Miller, founder of Creativista Charm." width="360" height="360" loading="lazy">
+    </div>
+    <div>
+      <h2>Tia S. Miller</h2>
+      <p class="lede">Founder and owner, Creativista Charm LLC.</p>
+      <p>Tia is the person a parks director calls, the person who hires the instructors, and the face of the work in the coverage listed above. Her media kit carries the full background, speaking topics, and photography.</p>
+      <a class="btn btn--ink" href="assets/images/opt/media-kit-1600.webp">View the media kit</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WANTED ===================== -->
+<section class="wanted band" id="wanted">
+  <div class="wrap">
+    <h2>Wanted: instructors</h2>
+    <p class="lede">Three roles are open. Send a r&eacute;sum&eacute; to <a href="mailto:info@CreativistaCharm.com?subject=Instructor%20application">info@CreativistaCharm.com</a>.</p>
+    <div class="wanted__box">
+      <div class="wanted__head">
+        <span>Open positions</span>
+        <span>3 posted</span>
+      </div>
+      <div class="wanted__row"><strong>One-on-One Tutors</strong> <span>South Florida &amp; Connecticut</span> <em>Open</em></div>
+      <div class="wanted__row"><strong>Administrative Assistant</strong> <span>Virtual</span> <em>Open</em></div>
+      <div class="wanted__row"><strong>Social Media Manager</strong> <span>Virtual</span> <em>Open</em></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== COLOPHON ===================== -->
+<footer class="colophon" id="contact">
+  <div class="wrap">
+    <div class="colophon__grid">
+      <div>
+        <h3 class="drawn">Creativista Charm LLC</h3>
+        <address>
+          PO Box 330061<br>
+          West Hartford, CT 06133<br>
+          <a href="mailto:info@CreativistaCharm.com">info@CreativistaCharm.com</a>
+        </address>
+      </div>
+      <div>
+        <h3 class="drawn">Connecticut</h3>
+        <address><a class="tnum" href="tel:+18604584373">860.458.4373</a></address>
+      </div>
+      <div>
+        <h3 class="drawn">South Florida</h3>
+        <address><a class="tnum" href="tel:+19548336672">954.833.6672</a></address>
+      </div>
+      <div>
+        <h3 class="drawn">Elsewhere</h3>
+        <address>
+          <a href="https://www.facebook.com/">Facebook</a><br>
+          <a href="https://www.instagram.com/">Instagram</a><br>
+          <a href="https://creativistapods.com">CreativistaPods.com</a>
+        </address>
+      </div>
+    </div>
+    <div class="colophon__legal">
+      <span>Creative kid events, programs and enrichment</span>
+      <span>&copy; Creativista Charm LLC</span>
+    </div>
+  </div>
+</footer>
+</div><!-- /.sheet -->
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var cells = Array.prototype.slice.call(document.querySelectorAll('.cells a'));
+  var targets = cells.map(function(c){ return document.querySelector(c.getAttribute('href')); });
+  if (!('IntersectionObserver' in window)) return;
+  var spy = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      var i = targets.indexOf(e.target);
+      cells.forEach(function(c, n){ c.setAttribute('aria-current', n === i ? 'true' : 'false'); });
+    });
+  }, { rootMargin: '-45% 0px -45% 0px' });
+  targets.forEach(function(t){ if (t) spy.observe(t); });
+})();
+</script>
+</body>
+</html>

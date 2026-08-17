@@ -1,0 +1,12 @@
+# Impeccable working files. Review captures (~20 MB) and the hook cache are
+# both regenerable, so they stay out of history.
+.impeccable/
+
+# Source images. The originals downloaded from the live site total ~44 MB and
+# are kept on disk only; the prototypes ship the optimized WebP set in opt/.
+# See ASSETS.md for what each file is and where it came from.
+assets/images/*
+!assets/images/opt/
+
+# macOS
+.DS_Store
