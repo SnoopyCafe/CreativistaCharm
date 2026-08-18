@@ -14,8 +14,8 @@
    Prototype F — the program guide's structure, the sister
    brand's materials. Bones inherited from prototype B: a thumb
    tab rail, an issue masthead, a dense listings table, a
-   dotted-leader partner index, an agate press line, a numbered
-   consulting sequence, a classified back page.
+   dotted-leader partner index, an agate press line, and a
+   classified back page.
    Every material comes from the Creativista Learning system.
    ============================================================ */
 
@@ -258,24 +258,23 @@ a{ color:inherit; text-underline-offset:.18em; }
   display:block; font-size:var(--step-3); font-weight:800;
   color:var(--teal); line-height:.9; letter-spacing:-.03em;
 }
-.index__cols{ columns:2; column-gap:3.5rem; }
-@media (max-width:800px){ .index__cols{ columns:1; } }
-.index__item{
-  break-inside:avoid;
-  display:flex; align-items:baseline; gap:.6rem;
-  padding:.62rem 0;
-  border-bottom:1px dotted var(--line-2);
-  font-size:var(--step--1);
+.roster__grid{
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(15.5rem,1fr));
+  gap:.7rem;
 }
-.index__item b{ font-weight:500; }
-.index__loc{
-  margin-left:auto; flex:none;
-  font-family:"Gabarito",sans-serif; font-weight:700;
-  font-size:var(--step--2); letter-spacing:.1em;
-  color:var(--ink-soft);
-  background:var(--white); border:1px solid var(--line);
-  padding:.1rem .55rem; border-radius:5rem;
+.roster__cell{
+  background:var(--white); border:1px solid var(--line); border-radius:var(--radius-sm);
+  padding:.85rem 1rem; font-size:var(--step--1); line-height:1.32;
+  display:flex; gap:.7rem; align-items:flex-start;
+  transition:transform .3s var(--ease), box-shadow .3s var(--ease);
 }
+.roster__cell:hover{ transform:translateY(-2px); box-shadow:0 14px 26px -18px var(--shadow-ink-45); }
+.roster__cell i{ width:.55rem; height:.55rem; border-radius:50%; background:var(--teal-lift); flex:none; margin-top:.5rem; font-style:normal; }
+.roster__cell i.fl{ background:var(--amber-deep); }
+.roster__key{ display:flex; gap:1.4rem; flex-wrap:wrap; margin-top:1.4rem; font-size:var(--step--2); color:var(--ink-soft); }
+.roster__key span{ display:inline-flex; align-items:center; gap:.5rem; }
+.roster__key b{ width:.55rem; height:.55rem; border-radius:50%; background:var(--teal-lift); }
+.roster__key b.fl{ background:var(--amber-deep); }
 
 /* ============================================================
    PRESS AGATE
@@ -294,31 +293,6 @@ a{ color:inherit; text-underline-offset:.18em; }
 .stat{ border-left:1px solid var(--white-18); padding-left:1.2rem; }
 .stat-n{ font-size:var(--step-2); font-weight:800; color:var(--amber); line-height:1; display:block; }
 .stat p{ margin:.45rem 0 0; color:var(--ink-on-dark-soft); font-size:var(--step--1); }
-
-/* ============================================================
-   CONSULTING SPREAD — a numbered sequence
-   ============================================================ */
-.spread .wrap{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(2rem,5vw,4rem); align-items:center; }
-@media (max-width:900px){ .spread .wrap{ grid-template-columns:1fr; } }
-.spread figure{ margin:0; }
-.spread figure img{ width:100%; border-radius:var(--radius); box-shadow:0 24px 50px -34px var(--shadow-ink-45); }
-.spread figcaption{
-  margin-top:.8rem; color:var(--ink-soft);
-  font-family:"Gabarito",sans-serif; font-weight:600; font-size:var(--step--2);
-  letter-spacing:.1em; text-transform:uppercase;
-}
-.steps{ counter-reset:svc; margin:1.5rem 0 2rem; }
-.steps li{
-  counter-increment:svc;
-  display:grid; grid-template-columns:auto 1fr; gap:1rem;
-  padding:.85rem 0; border-top:1px solid var(--line);
-  align-items:baseline;
-}
-.steps li::before{
-  content:counter(svc,decimal-leading-zero);
-  font-family:"Gabarito",sans-serif; font-weight:800;
-  color:var(--kicker-ink); font-size:var(--step--1);
-}
 
 /* ============================================================
    DEFINITION PANEL
@@ -442,7 +416,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <nav class="nav" aria-label="Primary">
       <a href="#listings">Programs</a>
       <a href="#partners">Partners</a>
-      <a href="#consulting">Consulting</a>
+      <a href="#about">About Us</a>
       <a href="#jobs">Jobs</a>
       <a class="btn" href="mailto:info@CreativistaCharm.com?subject=Programming%20inquiry">
         Book a call
@@ -552,27 +526,32 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <p>Cities, towns, districts, foundations, and community organizations, listed in full.</p>
     </div>
 
-    <ul class="index__cols">
-      <li class="index__item"><b>City of Hartford Recreation Department</b> <span class="index__loc">CT</span></li>
-      <li class="index__item"><b>City of Hartford Office of Community Engagement</b> <span class="index__loc">CT</span></li>
-      <li class="index__item"><b>Town of West Hartford Leisure Services</b> <span class="index__loc">CT</span></li>
-      <li class="index__item"><b>Town of Simsbury Recreation Department</b> <span class="index__loc">CT</span></li>
-      <li class="index__item"><b>Town of Westport Recreation Department</b> <span class="index__loc">CT</span></li>
-      <li class="index__item"><b>Capitol Region Education Council</b> <span class="index__loc">CT</span></li>
-      <li class="index__item"><b>Bloomfield Public Schools</b> <span class="index__loc">CT</span></li>
-      <li class="index__item"><b>Hartford Youth Advisory Board</b> <span class="index__loc">CT</span></li>
-      <li class="index__item"><b>Hartford Yard Goats Foundation</b> <span class="index__loc">CT</span></li>
-      <li class="index__item"><b>Mayor Bronin&rsquo;s Hartford Covid Recovery Group, Children, Youth &amp; Families</b> <span class="index__loc">CT</span></li>
-      <li class="index__item"><b>Hartford NEXT Inc.</b> <span class="index__loc">CT</span></li>
-      <li class="index__item"><b>Blue Hills Civic Association</b> <span class="index__loc">CT</span></li>
-      <li class="index__item"><b>West Indian Foundation Inc.</b> <span class="index__loc">CT</span></li>
-      <li class="index__item"><b>Advocacy to Legacy Inc.</b> <span class="index__loc">CT</span></li>
-      <li class="index__item"><b>DJ Londonn Scholarship Foundation</b> <span class="index__loc">CT</span></li>
-      <li class="index__item"><b>Launch Trampoline Park</b> <span class="index__loc">CT</span></li>
-      <li class="index__item"><b>Educators 4 You</b> <span class="index__loc">FL</span></li>
-      <li class="index__item"><b>iReading TUTOR</b> <span class="index__loc">FL</span></li>
-      <li class="index__item"><b>David Posnack Jewish Community Center</b> <span class="index__loc">FL</span></li>
+    <ul class="roster__grid">
+      <li class="roster__cell"><i></i>City of Hartford Recreation Department</li>
+      <li class="roster__cell"><i></i>City of Hartford Office of Community Engagement</li>
+      <li class="roster__cell"><i></i>Town of West Hartford Leisure Services</li>
+      <li class="roster__cell"><i></i>Town of Simsbury Recreation Department</li>
+      <li class="roster__cell"><i></i>Town of Westport Recreation Department</li>
+      <li class="roster__cell"><i></i>Capitol Region Education Council</li>
+      <li class="roster__cell"><i></i>Bloomfield Public Schools</li>
+      <li class="roster__cell"><i></i>Hartford Youth Advisory Board</li>
+      <li class="roster__cell"><i></i>Hartford Yard Goats Foundation</li>
+      <li class="roster__cell"><i></i>Mayor Bronin&rsquo;s Hartford Covid Recovery Group, Children, Youth &amp; Families</li>
+      <li class="roster__cell"><i></i>Hartford NEXT Inc.</li>
+      <li class="roster__cell"><i></i>Blue Hills Civic Association</li>
+      <li class="roster__cell"><i></i>West Indian Foundation Inc.</li>
+      <li class="roster__cell"><i></i>Advocacy to Legacy Inc.</li>
+      <li class="roster__cell"><i></i>DJ Londonn Scholarship Foundation</li>
+      <li class="roster__cell"><i></i>Launch Trampoline Park</li>
+      <li class="roster__cell"><i class="fl"></i>Educators 4 You</li>
+      <li class="roster__cell"><i class="fl"></i>iReading TUTOR</li>
+      <li class="roster__cell"><i class="fl"></i>David Posnack Jewish Community Center</li>
     </ul>
+
+    <p class="roster__key">
+      <span><b></b>Connecticut</span>
+      <span><b class="fl"></b>South Florida</span>
+    </p>
   </div>
 </section>
 
@@ -611,33 +590,8 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   </div>
 </section>
 
-<!-- ===================== CONSULTING ===================== -->
-<section class="spread section" id="consulting">
-  <div class="wrap">
-    <div>
-      <p class="label">Consulting</p>
-      <h2 data-rule>Youth &amp; educational consulting.</h2>
-      <p class="muted">When the programming exists on paper but not on the calendar, we build the thing that actually runs.</p>
-      <ol class="steps">
-        <li><span>Program design for recreation departments and school districts</span></li>
-        <li><span>Instructor recruiting, staffing, and on-site delivery</span></li>
-        <li><span>Summer and after-school session planning</span></li>
-        <li><span>Youth engagement strategy for foundations and civic groups</span></li>
-      </ol>
-      <a class="btn" href="mailto:info@CreativistaCharm.com?subject=Consulting%20inquiry">
-        Let&rsquo;s work together
-        <span class="chip" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
-      </a>
-    </div>
-    <figure>
-      <img src="assets/images/opt/hands-1600.webp" alt="Children standing in a circle with their hands stacked together on the grass." width="800" height="320" loading="lazy">
-      <figcaption>Program delivery, Connecticut &amp; South Florida</figcaption>
-    </figure>
-  </div>
-</section>
-
 <!-- ===================== DEFINITION ===================== -->
-<section class="define section">
+<section class="define section" id="about">
   <div class="wrap">
     <div>
       <p class="label">The name</p>
