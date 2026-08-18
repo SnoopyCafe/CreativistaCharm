@@ -67,7 +67,6 @@
   --radius-sm: 0.7rem;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --z-header: 50;
-  --tab-w: 2.9rem;
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
@@ -147,38 +146,6 @@ a{ color:inherit; text-underline-offset:.18em; }
 .btn--sm{ font-size:var(--step--2); padding:.35rem .35rem .35rem 1rem; }
 .btn--sm .chip{ width:1.7rem; height:1.7rem; }
 .btn-row{ display:flex; gap:.7rem; flex-wrap:wrap; align-items:center; }
-
-/* ============================================================
-   THUMB TABS — the guide's own edge navigation
-   ============================================================ */
-.tabs{
-  position:fixed; top:0; right:0; bottom:0; width:var(--tab-w);
-  z-index:var(--z-header);
-  display:flex; flex-direction:column; gap:2px;
-  padding:2px 0;
-  background:var(--line);
-}
-.tab{
-  flex:1;
-  display:grid; place-items:center;
-  text-decoration:none;
-  writing-mode:vertical-rl;
-  font-family:"Gabarito",sans-serif; font-weight:700;
-  font-size:var(--step--2); letter-spacing:.14em; text-transform:uppercase;
-  border-radius:var(--radius-sm) 0 0 var(--radius-sm);
-  transition:flex-grow .55s var(--ease), filter .3s var(--ease);
-  filter:saturate(.5) brightness(1.04);
-}
-.tab:nth-child(1){ background:var(--dot-sky);  color:var(--dot-sky-ink); }
-.tab:nth-child(2){ background:var(--dot-mint); color:var(--dot-mint-ink); }
-.tab:nth-child(3){ background:var(--dot-rose); color:var(--dot-rose-ink); }
-.tab:nth-child(4){ background:var(--dot-plum); color:var(--dot-plum-ink); }
-.tab:nth-child(5){ background:var(--amber);    color:var(--teal-deep); }
-.tab:hover, .tab:focus-visible{ filter:none; }
-.tab[aria-current="true"]{ flex-grow:1.9; filter:none; }
-@media (max-width:940px){ .tabs{ display:none; } :root{ --tab-w:0rem; } }
-
-.page{ margin-right:var(--tab-w); }
 
 /* ============================================================
    MASTHEAD
@@ -456,14 +423,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 -->
 
 <a class="skip" href="#main">Skip to main content</a>
-
-<nav class="tabs" aria-label="Guide sections">
-  <a class="tab" href="#listings">Programs</a>
-  <a class="tab" href="#partners">Partners</a>
-  <a class="tab" href="#consulting">Consulting</a>
-  <a class="tab" href="#jobs">Jobs</a>
-  <a class="tab" href="#contact">Contact</a>
-</nav>
 
 <div class="page">
 
@@ -785,20 +744,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <script>
 document.documentElement.classList.add('js');
 (function(){
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
-  var targets = tabs.map(function(t){ return document.querySelector(t.getAttribute('href')); });
-  if (!('IntersectionObserver' in window)) return;
-
-  var spy = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (!e.isIntersecting) return;
-      var i = targets.indexOf(e.target);
-      tabs.forEach(function(t, n){ t.setAttribute('aria-current', n === i ? 'true' : 'false'); });
-    });
-  }, { rootMargin: '-45% 0px -45% 0px' });
-  targets.forEach(function(t){ if (t) spy.observe(t); });
-
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     var rules = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
         if (!e.isIntersecting) return;

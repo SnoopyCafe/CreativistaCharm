@@ -167,24 +167,6 @@ a{ color:inherit; text-underline-offset:.18em; }
 @media (max-width:940px){ .nav a:not(.btn){ display:none; } }
 
 /* ============================================================
-   BILLING BAND — the poster's packed top rule, in teal
-   ============================================================ */
-.billing{
-  background:var(--teal-deep); color:var(--ink-on-dark-soft);
-  padding-block:.85rem;
-  font-family:"Gabarito",sans-serif; font-weight:600;
-  font-size:var(--step--2); line-height:1.8;
-}
-.billing__track{ display:flex; flex-wrap:wrap; column-gap:1.15rem; row-gap:.15rem; align-items:baseline; }
-.billing__track > span{ display:flex; align-items:center; gap:1.15rem; }
-.billing__track > span::after{
-  content:""; width:.3rem; height:.3rem; border-radius:50%;
-  background:var(--amber-line); flex:none;
-}
-.billing__track > span:last-child::after{ display:none; }
-.billing__track b{ color:var(--amber); font-weight:700; }
-
-/* ============================================================
    HERO — the burst, softened to amber, behind a knocked-out card
    ============================================================ */
 .poster{
@@ -453,14 +435,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </nav>
   </div>
 </header>
-
-<!-- Abbreviated billing. The full roster is set in #partners with list
-     semantics, so this repeat is hidden from assistive tech. -->
-<div class="billing" aria-hidden="true">
-  <div class="wrap billing__track">
-    <span><b>19 agencies booked</b></span><span>City of Hartford Recreation</span><span>West Hartford Leisure Services</span><span>Simsbury Recreation</span><span>Westport Recreation</span><span>Capitol Region Education Council</span><span>Bloomfield Public Schools</span><span>Hartford Yard Goats Foundation</span><span>Blue Hills Civic Association</span><span>David Posnack JCC</span><span><b>CT 860.458.4373</b></span><span><b>FL 954.833.6672</b></span>
-  </div>
-</div>
 
 <main id="main">
 
