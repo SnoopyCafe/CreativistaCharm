@@ -1,30 +1,29 @@
-# Creativista Charm — site prototypes
+# Creativista Charm — live static site
 
-Six design directions for the Creativista Charm LLC website, replacing the
-current WordPress.com site at <https://creativistacharm.com>.
+This is the live static site for Creativista Charm LLC, replacing the current
+WordPress.com site at <https://creativistacharm.com>. The live direction was
+prototype F; the other five design directions are archived in `prototypes/`.
 
-Static HTML and CSS. No build step, no framework, no backend. Open
-`index.html` in a browser to compare all six side by side, or open any
-prototype directly.
+Static HTML and CSS. No build step, no framework, no backend. Open `index.html`
+in a browser to view the site.
 
 ```
 open index.html
 ```
 
-## The six
+## Site and archive
 
 | | Direction | World |
 |---|---|---|
-| **A** | `prototype-a-pennant.html` | Felt & Floss — camp pennant and patch culture on deep felt teal |
-| **B** | `prototype-b-programguide.html` | The Program Guide — the seasonal catalog a recreation department publishes |
-| **C** | `prototype-c-poster.html` | Four-Color Pull — a screenprinted community poster |
-| **D** | `prototype-d-pods.html` | Sister Brand — built on the Creativista Learning / CreativistaPods design system |
-| **E** | `prototype-e-poster-pods.html` | C's composition rendered in the sister brand's materials |
-| **F** | `prototype-f-guide-pods.html` | B's structure rendered in the sister brand's materials |
+| **A** | `prototypes/prototype-a-pennant.html` | Felt & Floss — camp pennant and patch culture on deep felt teal |
+| **B** | `prototypes/prototype-b-programguide.html` | The Program Guide — the seasonal catalog a recreation department publishes |
+| **C** | `prototypes/prototype-c-poster.html` | Four-Color Pull — a screenprinted community poster |
+| **D** | `prototypes/prototype-d-pods.html` | Sister Brand — built on the Creativista Learning / CreativistaPods design system |
+| **E** | `prototypes/prototype-e-poster-pods.html` | C's composition rendered in the sister brand's materials |
+| **F** | `index.html` | B's structure rendered in the sister brand's materials; selected as the live site |
 
-A, B, and C each carry their own identity. D, E, and F are one visual family
-with the sister property, so choosing among those three is a question of
-composition rather than brand.
+A, B, and C each carry their own identity. D and E share a visual family with
+the selected direction F and the sister property.
 
 ## Content
 
@@ -51,8 +50,6 @@ deliberately absent here. See `PRODUCT.md`.
 ## Before launch
 
 1. Confirm the AdobeStock license on three photographs carries to this project.
-2. Replace the placeholder social links in the footers with the real Facebook and Instagram URLs.
-3. Pick a direction. `DESIGN.md` gets written from the winner, not before.
 
 ## Note on image sources
 

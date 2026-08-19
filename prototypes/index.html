@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Creativista Charm — Archived Design Directions</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/images/opt/logo-900.webp">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#101314; --panel:#181c1e; --line:#2b3235;
+  --fg:#EDEFEE; --dim:#9AA3A5;
+  --a:#E5007E; --b:#B4005F; --c:#E5322A;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:'Barlow',system-ui,sans-serif; line-height:1.6;
+  padding:clamp(2rem,6vw,5rem) 0;
+}
+.wrap{ width:min(1100px,92vw); margin-inline:auto; }
+h1{
+  font-family:'Barlow Condensed',sans-serif; font-weight:700;
+  text-transform:uppercase; letter-spacing:.02em;
+  font-size:clamp(2rem,1.2rem + 3vw,3.4rem); line-height:1; margin:0 0 .35em;
+}
+.sub{ color:var(--dim); max-width:62ch; margin:0 0 3rem; }
+.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.4rem; }
+.card{
+  display:block; text-decoration:none; color:inherit;
+  background:var(--panel); border:1px solid var(--line);
+  padding:1.6rem 1.5rem 1.7rem;
+  transition:border-color .2s, transform .2s cubic-bezier(.16,1,.3,1);
+}
+.card:hover{ transform:translateY(-3px); }
+.card:nth-child(1):hover{ border-color:var(--a); }
+.card:nth-child(2):hover{ border-color:var(--b); }
+.card:nth-child(3):hover{ border-color:var(--c); }
+.swatches{ display:flex; gap:6px; margin-bottom:1.1rem; }
+.swatches i{ width:34px; height:34px; }
+.card h2{
+  font-family:'Barlow Condensed',sans-serif; font-weight:700;
+  text-transform:uppercase; letter-spacing:.03em;
+  font-size:1.35rem; line-height:1.05; margin:0 0 .5rem;
+}
+.card p{ color:var(--dim); font-size:.95rem; margin:0 0 1rem; }
+.card dl{ margin:0; display:grid; grid-template-columns:auto 1fr; gap:.3rem .8rem; font-size:.82rem; }
+.card dt{ color:var(--dim); text-transform:uppercase; letter-spacing:.12em; font-size:.68rem; padding-top:.18rem; }
+.card dd{ margin:0; }
+.note{
+  margin-top:3rem; padding-top:1.6rem; border-top:1px solid var(--line);
+  color:var(--dim); font-size:.9rem; max-width:70ch;
+}
+.note b{ color:var(--fg); font-weight:600; }
+a{ color:var(--fg); }
+:where(a):focus-visible{ outline:2px solid var(--a); outline-offset:3px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Creativista Charm — archived design directions</h1>
+  <p class="sub">These are archived design directions retained for reference. View <a href="../index.html">the live site</a>.</p>
+
+  <div class="grid">
+    <a class="card" href="prototype-a-pennant.html">
+      <div class="swatches"><i style="background:#0B3F45"></i><i style="background:#F2B705"></i><i style="background:#C4006B"></i><i style="background:#F7F0E1"></i></div>
+      <h2>A · Felt &amp; Floss</h2>
+      <p>Camp pennant and patch culture. Nineteen agencies as earned, embroidered patches on deep felt; programs hang as pennants from a cord.</p>
+      <dl>
+        <dt>Type</dt><dd>Graduate, Grand Hotel, Archivo</dd>
+        <dt>Ground</dt><dd>Dark felt teal</dd>
+        <dt>Reads</dt><dd>Warm, earned, tactile</dd>
+      </dl>
+    </a>
+
+    <a class="card" href="prototype-b-programguide.html">
+      <div class="swatches"><i style="background:#B4005F"></i><i style="background:#0D6367"></i><i style="background:#2C7527"></i><i style="background:#C06A00"></i></div>
+      <h2>B · The Program Guide</h2>
+      <p>The seasonal catalog a recreation department already publishes. Thumb tabs down the edge, dense listings, a printed partner index.</p>
+      <dl>
+        <dt>Type</dt><dd>Saira Condensed, Public Sans</dd>
+        <dt>Ground</dt><dd>White stock, four seasonal fields</dd>
+        <dt>Reads</dt><dd>Official, scannable, familiar</dd>
+      </dl>
+    </a>
+
+    <a class="card" href="prototype-c-poster.html">
+      <div class="swatches"><i style="background:#E5322A"></i><i style="background:#00857A"></i><i style="background:#FFC400"></i><i style="background:#E5007E"></i></div>
+      <h2>C · Four-Color Pull</h2>
+      <p>A screenprinted community poster. A ray burst turning behind drawn lettering, halftoned photographs, and the billing crawling along the border.</p>
+      <dl>
+        <dt>Type</dt><dd>Bungee, Barlow Condensed, Barlow</dd>
+        <dt>Ground</dt><dd>Uncoated sheet, four flat inks</dd>
+        <dt>Reads</dt><dd>Loud, civic, energetic</dd>
+      </dl>
+    </a>
+
+    <a class="card" href="prototype-d-pods.html">
+      <div class="swatches"><i style="background:#0B3A3F"></i><i style="background:#F5C24C"></i><i style="background:#E5DCF3"></i><i style="background:#FFFFFF;border:1px solid #2b3235"></i></div>
+      <h2>D · Sister Brand</h2>
+      <p>Built on the real CreativistaPods / Creativista Learning design system: its teal and amber tokens, Gabarito type, pill buttons, and the dashed orbit device.</p>
+      <dl>
+        <dt>Type</dt><dd>Gabarito, Schibsted Grotesk</dd>
+        <dt>Ground</dt><dd>White, amber wash, lilac band</dd>
+        <dt>Reads</dt><dd>Consistent with the sister site</dd>
+      </dl>
+    </a>
+
+    <a class="card" href="prototype-e-poster-pods.html">
+      <div class="swatches"><i style="background:#0B3A3F"></i><i style="background:#F5C24C"></i><i style="background:#FBEFD2"></i><i style="background:#E5DCF3"></i></div>
+      <h2>E · Poster, Pods Materials</h2>
+      <p>C's composition rebuilt in the sister brand's system. The billing band, ray burst, lettered bill, and packed roster survive; the ink rules, halftones, and Bungee do not.</p>
+      <dl>
+        <dt>Type</dt><dd>Gabarito, Schibsted Grotesk</dd>
+        <dt>Ground</dt><dd>White, amber burst, lilac bands</dd>
+        <dt>Reads</dt><dd>C's structure, D's manners</dd>
+      </dl>
+    </a>
+
+    <a class="card" href="prototype-f-guide-pods.html">
+      <div class="swatches"><i style="background:#0B3A3F"></i><i style="background:#F5C24C"></i><i style="background:#C8DCF5"></i><i style="background:#C9EEE4"></i></div>
+      <h2>F · Guide, Pods Materials</h2>
+      <p>B's catalog rebuilt in the sister brand's system. Thumb tabs, the dense listings table, and the dotted-leader index survive; the flat seasonal fields do not.</p>
+      <dl>
+        <dt>Type</dt><dd>Gabarito, Schibsted Grotesk</dd>
+        <dt>Ground</dt><dd>White, teal cover, lilac index</dd>
+        <dt>Reads</dt><dd>B's structure, D's manners</dd>
+      </dl>
+    </a>
+  </div>
+
+  <p class="note">
+    <b>All content is real.</b> Nineteen clients, eight press outlets, both regional phone numbers, three open roles, and the founder bio all come from the current site. No statistics, testimonials, years-in-business, or student counts were invented, because none were available to use.
+    <br><br>
+    <b>Two things to check before launch.</b> Three of the photographs are AdobeStock licensed to the original site — confirm the license carries over. Press outlets are set as text rather than reproduced logos.
+  </p>
+</div>
+</body>
+</html>
