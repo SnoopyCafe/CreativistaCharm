@@ -239,7 +239,10 @@ a{ color:inherit; text-underline-offset:.18em; }
   .listing__desc{ grid-column:1 / -1; }
 }
 .listing__name{ font-weight:800; font-size:var(--step-0); line-height:1.12; }
-.listing__band{ display:block; margin-top:.45rem; height:.35rem; width:3.4rem; border-radius:5rem; background:var(--line-2); }
+.listing__band{ display:block; margin-top:.45rem; height:.35rem; width:3.4rem; border-radius:5rem; }
+.listing:nth-of-type(1) .listing__band{ background:var(--dot-sky); }
+.listing:nth-of-type(2) .listing__band{ background:var(--dot-mint); }
+.listing:nth-of-type(3) .listing__band{ background:var(--dot-rose); }
 .listing dl{ margin:0; }
 .listing dt{
   font-family:"Gabarito",sans-serif; font-weight:700;
@@ -456,7 +459,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div class="section-head">
       <p class="label">Programs</p>
       <h2 data-rule>Programs</h2>
-      <p>Three programs available to agencies and students</p>
+      <p>Three programs available to agencies and students.</p>
     </div>
 
     <div>
@@ -501,12 +504,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <h2 data-rule><span class="index__count">19</span> agencies have hired us.</h2>
       <p>Cities, towns, districts, foundations, and community organizations, listed in full.</p>
     </div>
-
-    <p class="roster__key">
-      <span><b></b>Connecticut</span>
-      <span><b class="fl"></b>South Florida</span>
-    </p>
-
     <ul class="roster__grid">
       <li class="roster__cell"><i></i><span class="sr-only">Connecticut: </span>City of Hartford Recreation Department</li>
       <li class="roster__cell"><i></i><span class="sr-only">Connecticut: </span>City of Hartford Office of Community Engagement</li>
@@ -605,7 +602,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <img src="assets/images/opt/tia-900.webp" alt="Tia S. Miller, founder of Creativista Charm." width="380" height="380" loading="lazy">
     </div>
     <div>
-      <p class="label">Who you will be working with</p>
       <h2>Tia S. Miller</h2>
       <p class="muted">Founder and owner, Creativista Charm LLC.</p>
       <p class="muted">Tia is the person a parks director calls, the person who hires the instructors, and the face of the work in the coverage listed above. Her media kit carries the full background, speaking topics, and photography.</p>
